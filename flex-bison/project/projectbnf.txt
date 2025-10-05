@@ -1,0 +1,77 @@
+<myhtml>	::= 'MYHTML' <head> <body> 'MYHTML_'
+
+<head>		::= ε
+		| 'HEAD' <title> <meta> 'HEAD_'
+
+<title>		::= 'TITLE' <text> 'TITLE_'
+
+<meta>		::= ε
+		| <meta> 'META' <name> <content> 'CT'
+		| <meta> 'META' <charset> 'CT'
+
+<body>		::= 'BODY' <body_cont> 'BODY_'
+
+<body_cont>	::= ε
+		| <body_cont> <div_cont>
+		| <body_cont> <div>
+
+<div>		::= 'DIV' <id> <style> 'CT' <div_cont> 'DIV_'
+
+<div_cont>	::= <form>
+		| <img>
+		| <a>
+		| <p>
+
+<p>		::= 'P' <id> <style> 'CT' <text> 'P_'
+
+<a>		::= 'A' <id> <href> 'CT' <a_cont> 'A_'
+
+<a_cont>	::= <text>
+		| <img>
+
+<img>		::= 'IMG' <id> <src> <alt> <width> <height> 'CT'
+
+<form>		::= 'FORM' <id> <style> 'CT' <form_cont> 'FORM_'
+
+<form_cont>	::= <form_cont> <label>
+		| <form_cont> <input>
+		| <label>
+		| <input>
+
+<input>		::= 'INPUT' <id> <type> <style> <value> 'CT'
+
+<label>		::= 'LABEL' <id> <for> <style> 'CT' <text> 'LABEL_'
+
+<id>		::= 'ID' 'ASSIGN' 'ALPHA'
+
+<charset>	::= 'CHARSET' 'ASSIGN' 'ALPHA'
+
+<name>		::= 'NAME' 'ASSIGN' 'ALPHA'
+
+<content>	::= 'CONTENT' 'ASSIGN' 'ALPHA'
+
+<style>		::= ε
+		| 'STYLE' 'ASSIGN' 'ALPHA'
+
+<href>		::= 'HREF' 'ASSIGN' 'ALPHA'
+
+<src>		::= 'SRC' 'ASSIGN' 'ALPHA'
+
+<alt>		::= 'ALT' 'ASSIGN' 'ALPHA'
+
+<width>		::= ε
+		| 'WIDTH' 'ASSIGN' 'ALPHA'
+
+<height>	::= ε
+		| 'HEIGHT' 'ASSIGN' 'ALPHA'
+
+<value>		::= ε
+		| 'VALUE' 'ASSIGN' 'ALPHA'
+
+<type>		::= 'TYPE' 'ASSIGN' 'ALPHA'
+
+<for>		::= 'FOR' 'ASSIGN' 'ALPHA'
+
+<text>		::= ε
+		| 'TEXT'
+
