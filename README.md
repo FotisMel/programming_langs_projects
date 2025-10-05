@@ -4,6 +4,6 @@
 
 Creation of hmtl-like pseudolang with specific capabilities as prompted. Specifically:
 
-* Creaton of BNF grammar
-* Implementation of said grammar in Bison
+* Creaton of LR(1) grammar
+* Implementation of said grammar in Bison in BNF
 # Use of regex for tokenization of input using Flex
